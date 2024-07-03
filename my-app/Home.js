@@ -9,10 +9,12 @@ export default function Home() {
           source={require('./assets/Menu.png')} // Replace with your menu image path
           style={styles.menuImage}
         />
+        {/* New logo image */}
         <Image 
-          source={require('./assets/Logo.png')} // Replace with your logo image path
-          style={styles.logoImage}
+          source={require('./assets/Logo.png')} // Replace with your new logo image path
+          style={styles.newLogoImage}
         />
+        {/* Search image next to the new logo */}
         <Image 
           source={require('./assets/Search.png')} // Replace with your search image path
           style={styles.searchImage}
@@ -145,8 +147,89 @@ export default function Home() {
           <Text style={styles.priceText}>$120</Text>
         </View>
       </View>
-      {/* Add more components here */}
+      {/* Add a spacer view */}
+      <View style={styles.spacer} />
+      {/* Add the centered Logo image */}
+      <View style={styles.centeredLogoContainer}>
+        <Image 
+          source={require('./assets/Logo.png')} // Replace with your new Logo image path
+          style={styles.centeredLogo}
+        />
+        {/* New Search image next to the new Logo */}
+        <Image 
+          source={require('./assets/Search.png')} // Replace with your search image path
+          style={styles.searchImage}
+        />
+        {/* Checkout text */}
+        <Text style={styles.checkoutText}>C H E C K O U T</Text>
+      </View>
+
+        <View style={[styles.imageWrapper, styles.duplicatedImages]}>
+  <Image 
+    source={require('./assets/dress1.png')} // Replace with your dress8 image path
+    style={styles.dressImage}
+  />
+  <Text style={styles.officeWearText}>OFFICE WEAR </Text>
+  <Text style={styles.cardiganText}>Office wear for your office </Text>
+  <View style={styles.priceWrapper}>
+    <Text style={styles.priceText}>$120</Text>
+    <Image 
+      source={require('./assets/remove.png')} // Replace with your add image path
+      style={{
+       marginBottom:-0.5,
+        marginLeft: 'auto', // Move the image to the right
+        marginRight: -50, // Add additional margin on the right side if needed
+      }}
+    />
+  </View>
+
+  
+</View>
+<View style={[styles.imageWrapper, styles.duplicatedImages]}>
+  <Image 
+    source={require('./assets/dress4.png')} // Replace with your dress8 image path
+    style={styles.dressImage}
+  />
+  <Text style={styles.officeWearText}>LAMEREI </Text>
+  <Text style={styles.cardiganText}>Recycle Boucle Knit Cardigan Pink </Text>
+  <View style={styles.priceWrapper}>
+    <Text style={styles.priceText}>$120</Text>
+    <Image 
+      source={require('./assets/remove.png')} // Replace with your add image path
+      style={{
+        marginBottom:-0.5,
+         marginLeft: 'auto', // Move the image to the right
+         marginRight: -50, // Add additional margin on the right side if needed
+       }}
+    />
+  </View>
+</View>
+<View style={[styles.imageWrapper, styles.duplicatedImages]}>
+
+  <Image 
+    source={require('./assets/dress3.png')} // Replace with your dress8 image path
+    style={styles.dressImage}
+  />
+  <Text style={styles.officeWearText}>CHURCH WEAR </Text>
+  <Text style={styles.cardiganText}>Recycle Boucle Knit Cardigan Pink </Text>
+  <View style={styles.priceWrapper}>
+    <Text style={styles.priceText}>$120</Text>
+    <Image 
+      source={require('./assets/remove.png')} // Replace with your add image path
+      style={{
+        marginBottom:-0.5,
+         marginLeft: 'auto', // Move the image to the right
+         marginRight: -50, // Add additional margin on the right side if needed
+       }}
+    />
+  </View>
+</View>
+
+
     </ScrollView>
+
+
+
   );
 }
 
@@ -169,7 +252,7 @@ const styles = StyleSheet.create({
     height: 30,
     marginRight: 10,
   },
-  logoImage: {
+  newLogoImage: {
     width: 120,
     height: 50,
     marginLeft: 110,
@@ -177,7 +260,7 @@ const styles = StyleSheet.create({
   searchImage: {
     width: 30,
     height: 30,
-    marginLeft: 40,
+    marginLeft: 20, // Adjusted marginLeft for spacing
   },
   shoppingBagImage: {
     width: 30,
@@ -260,5 +343,50 @@ const styles = StyleSheet.create({
   },
   duplicatedImages: {
     marginBottom: 40,
+  },
+  spacer: {
+    height: 200, // Adjust the height to add more or less space
+  },
+  centeredLogoContainer: {
+    flexDirection: 'row', // Changed to flexDirection: 'row' to align items horizontally
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20, // Adjust as needed for additional spacing
+  },
+  centeredLogo: {
+    width: 120, // Adjust the width as needed
+    height: 50, // Adjust the height as needed
+  },
+  checkoutText: {
+    marginTop: 10,
+    textAlign: 'center',
+    color: 'black', // Set the color to black
+    fontFamily: 'Aptos', // Set the font family to Aptos
+    fontSize: 16,
+
+    imageContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 20,
+        width: '100%',
+        justifyContent: 'space-between',
+        paddingHorizontal: 20,
+        flexWrap: 'wrap',
+      },
+
+        imageWrapper: {
+    position: 'relative',
+    width: '45%', // Adjusted width to fit two images per row
+    height: 250, // Increased height for larger images
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  dressImage: {
+    width: '100%',
+    height: '100%',
+  },
+
+  
+      
   },
 });
